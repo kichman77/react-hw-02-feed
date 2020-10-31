@@ -9,3 +9,6 @@ export const StatisticsBtn = styled.button`
 export const StaticticsList = styled.ul`
   list-style: none;
 `;
+export const SectionBox = styled.section`
+  margin-left: 20px;
+`;

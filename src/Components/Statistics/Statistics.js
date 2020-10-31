@@ -1,10 +1,12 @@
 import React from 'react';
-import { StatisticsBtn, StaticticsList } from './Statistics.styled';
+import { StatisticsBtn, StaticticsList, SectionBox } from './Statistics.styled';
+import PropTypes from 'prop-types';
+
 const Statistics = ({ good, neutral, bad, setValue }) => {
   let total = good + neutral + bad;
   let positiveFeedback = Math.round((good / total) * 100);
   return (
-    <section>
+    <SectionBox>
       <h2>Please leave feedback</h2>
 
       <StatisticsBtn className="btn-good" onClick={setValue} name="good">
@@ -51,8 +53,16 @@ const Statistics = ({ good, neutral, bad, setValue }) => {
       ) : (
         <p>No feedback given</p>
       )}
-    </section>
+    </SectionBox>
   );
 };
 
 export default Statistics;
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number,
+  positivePercentage: PropTypes.number,
+};

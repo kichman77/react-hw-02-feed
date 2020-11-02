@@ -20,27 +20,7 @@ const Statistics = ({ good, neutral, bad, setValue }) => {
       </StatisticsBtn>
 
       <h2>Statistics</h2>
-      {good > 0 ? (
-        <StaticticsList>
-          <li>Good: {good}</li>
-          <li>Neutral: {neutral}</li>
-          <li>Bad: {bad}</li>
-          <li>Total: {total}</li>
-          <li>
-            Positive feedback: {positiveFeedback ? positiveFeedback : '0'}%
-          </li>
-        </StaticticsList>
-      ) : <p>No feedback given</p> && neutral > 0 ? (
-        <StaticticsList>
-          <li>Good: {good}</li>
-          <li>Neutral: {neutral}</li>
-          <li>Bad: {bad}</li>
-          <li>Total: {total}</li>
-          <li>
-            Positive feedback: {positiveFeedback ? positiveFeedback : '0'}%
-          </li>
-        </StaticticsList>
-      ) : <p>No feedback given</p> && bad > 0 ? (
+      {total ? (
         <StaticticsList>
           <li>Good: {good}</li>
           <li>Neutral: {neutral}</li>
